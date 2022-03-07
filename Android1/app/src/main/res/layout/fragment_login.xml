@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!-- shapeAppearanceOverlay或shapeAppearance 加载style -->
+    <!-- strokeColor描边颜色 -->
+    <!-- strokeWidth描边宽度 -->
+    <!-- 注意：设置描边的时候，需要添加padding属性，padding的值为strokeWidth的一半-->
+    <!-- 圆角图片 -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/portrait"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:padding="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_1"
+        app:shapeAppearanceOverlay="@style/roundedCornerImageStyle"
+        app:strokeColor="@color/purple_500"
+        app:strokeWidth="1dp" />
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_login_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="请输入账号"
+            app:hintTextAppearance="@style/hintAppearance">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="8dp"
+                android:inputType="number"
+                android:textSize="14dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="请输入密码"
+            app:hintTextAppearance="@style/hintAppearance"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="8dp"
+                android:inputType="textPassword"
+                android:textSize="14dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cb_remember_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="记住密码" />
+
+        <CheckBox
+            android:id="@+id/cb_auto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:text="自动登录" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:orientation="horizontal"
+        android:theme="@style/MaterialStyle">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_retrieve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:text="找回密码"
+            app:backgroundTint="@color/purple_500"
+            app:shapeAppearanceOverlay="@style/DoubleFilletButtonStyle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:text="立即注册"
+            app:backgroundTint="@color/purple_500"
+            app:shapeAppearanceOverlay="@style/DoubleFilletButtonStyle" />
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="登录"
+        android:theme="@style/MaterialStyle"
+        app:backgroundTint="@color/teal_200"
+        app:icon="@drawable/login" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="120dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_qq_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/qq"
+            app:shapeAppearance="@style/RoundedStyle" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_wechat_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/wechat"
+            app:shapeAppearance="@style/RoundedStyle" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_github_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/github"
+            app:shapeAppearance="@style/RoundedStyle" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_login"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:max="100"
+        android:progress="15"
+        android:visibility="invisible" />
+
+</LinearLayout>

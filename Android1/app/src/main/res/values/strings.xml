@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">第五次-lv6</string>
+    <string name="navigation_drawer_open">sb_navigation_drawer_open</string>
+    <string name="navigation_drawer_close">sb_navigation_drawer_close</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/home_tv_rv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/home_tv_rv_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="作者" />
+
+    <TextView
+        android:id="@+id/home_tv_rv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/home_tv_rv_content"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/home_tv_rv_author"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2021.12.32" />
+
+    <TextView
+        android:id="@+id/home_tv_rv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxEms="18"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/home_tv_rv_content"
+        app:layout_constraintTop_toBottomOf="@+id/home_tv_rv_author"
+        tools:text="板载" />
+
+    <TextView
+        android:id="@+id/home_tv_rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:maxLines="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_tv_rv_title"
+        tools:text="板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载板载" />
+
+    <TextView
+        android:id="@+id/home_tv_rv_chaptername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="@+id/home_tv_rv_content"
+        app:layout_constraintTop_toBottomOf="@+id/home_tv_rv_content"
+        tools:text="栏目" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

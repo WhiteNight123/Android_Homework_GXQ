@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Code/MYAppliction/Redrock_Homework/Redrock_homework_task5/app/src/main/res/layout/activity_main.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/Redrock_Homework/Redrock_homework_task5/app/src/main/res/layout/fragment_login.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/activity_main.xml" value="0.24895833333333334" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/activity_main2.xml" value="0.4" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/activity_start.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/activity_strat.xml" value="0.2635416666666667" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_content.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_content_bar_home.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_content_home.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_content_home2.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_content_nav_header_home.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_login.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_lol.xml" value="0.13802083333333334" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/fragment_register.xml" value="0.2977777777777778" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/login_fragment.xml" value="0.2977777777777778" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/login_frament.xml" value="0.2635416666666667" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/layout/lol.xml" value="0.2977777777777778" />
+        <entry key="..\:/Code/MYAppliction/lv6Plus/app/src/main/res/menu/fragment_content_drawer.xml" value="0.26666666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

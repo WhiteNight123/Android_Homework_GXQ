@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.task6">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_redrock_android"
+        android:label="Task6"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Task6">
+        <activity
+            android:name=".Lv5"
+            android:exported="false"
+            android:label="Lv5"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".Lv4"
+            android:exported="false"
+            android:label="Lv4" />
+        <activity
+            android:name=".Lv3"
+            android:exported="false"
+            android:label="Lv3" />
+        <activity
+            android:name=".Lv2"
+            android:exported="false"
+            android:label="Lv2" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Lv1"
+            android:exported="true"
+            android:label="Lv1" />
+    </application>
+
+</manifest>
