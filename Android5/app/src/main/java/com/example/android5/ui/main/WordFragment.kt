@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -32,10 +31,28 @@ class WordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.searchWordEdit.addTextChangedListener { editable ->
-            val content = editable.toString()
+//        if (viewModel.isWordSaved()) {
+//            val word1 = viewModel.getSavedWord()
+//            binding.wordText.text = word1.word
+//            binding.accentText.text = word1.accent
+//            binding.meanCnText.text = word1.meanCn
+//            binding.meanEnText.text = word1.meanEn
+//            binding.sentenceText.text = word1.sentence
+//            binding.sentenceTransText.text = word1.sentenceTrans
+//        }
+
+        binding.searchNetBtn.setOnClickListener {
+            val content = binding.searchWordEdit.text.toString()
             if (content.isNotEmpty()) {
-                viewModel.searchWord(content)
+                viewModel.searchWord1(content)
+            } else {
+                viewModel.wordList.clear()
+            }
+        }
+        binding.searchLocalBtn.setOnClickListener {
+            val content = binding.searchWordEdit.text.toString()
+            if (content.isNotEmpty()) {
+                viewModel.searchWord2(content)
             } else {
                 viewModel.wordList.clear()
             }
@@ -43,6 +60,24 @@ class WordFragment : Fragment() {
         viewModel.wordLiveData.observe(viewLifecycleOwner, Observer { result ->
             val word = result.getOrNull()
             if (word != null) {
+                viewModel.saveWord(word)
+                viewModel.wordList.clear()
+                viewModel.wordList.add(word)
+                binding.wordText.text = viewModel.wordList[0].word
+                binding.accentText.text = viewModel.wordList[0].accent
+                binding.meanCnText.text = viewModel.wordList[0].meanCn
+                binding.meanEnText.text = viewModel.wordList[0].meanEn
+                binding.sentenceText.text = viewModel.wordList[0].sentence
+                binding.sentenceTransText.text = viewModel.wordList[0].sentenceTrans
+            } else {
+                Toast.makeText(activity, "未能查询到单词", Toast.LENGTH_SHORT).show()
+                result.exceptionOrNull()?.printStackTrace()
+            }
+        })
+        viewModel.wordLiveData2.observe(viewLifecycleOwner, Observer { result ->
+            val word = result.getOrNull()
+            if (word != null) {
+                viewModel.saveWord(word)
                 viewModel.wordList.clear()
                 viewModel.wordList.add(word)
                 binding.wordText.text = viewModel.wordList[0].word

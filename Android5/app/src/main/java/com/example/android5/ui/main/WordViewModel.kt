@@ -13,13 +13,26 @@ import com.example.android5.logic.model.WordResponse
  * @data 2022/3/7
  */
 class WordViewModel : ViewModel() {
-    private val searchLiveData = MutableLiveData<String>()
+    private val searchLiveData1 = MutableLiveData<String>()
+    private val searchLiveData2 = MutableLiveData<String>()
     val wordList = ArrayList<WordResponse>()
-    val wordLiveData = Transformations.switchMap(searchLiveData) { query ->
+    val wordLiveData = Transformations.switchMap(searchLiveData1) { query ->
         Repository.searchWord(query)
     }
 
-    fun searchWord(query: String) {
-        searchLiveData.value = query
+    fun searchWord1(query: String) {
+        searchLiveData1.value = query
     }
+
+    val wordLiveData2 = Transformations.switchMap(searchLiveData2) { query ->
+        Repository.getWord(query)
+    }
+
+    fun searchWord2(query: String) {
+        searchLiveData2.value = query
+    }
+
+    fun saveWord(word: WordResponse) = Repository.saveWord(word)
+    fun getSavedWord() = Repository.getSavedWord()
+    fun isWordSaved() = Repository.isWordSaved()
 }
