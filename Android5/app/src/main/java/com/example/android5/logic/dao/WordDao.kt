@@ -18,7 +18,7 @@ import java.io.InputStreamReader
  */
 object WordDao {
     fun saveWord(word: WordResponse) {
-        sharedPreferences().edit() {
+        sharedPreferences().edit {
             putString("word", Gson().toJson(word))
         }
     }
@@ -37,7 +37,7 @@ object WordDao {
 
         val stringBuilder = StringBuilder()
         //获得assets资源管理器
-        val assetManager: AssetManager = ReciteWordApplication.context.getAssets()
+        val assetManager: AssetManager = ReciteWordApplication.context.assets
         val buffReader =
             BufferedReader(InputStreamReader(assetManager.open("$query.json"), "utf-8"))
         var line: String?
