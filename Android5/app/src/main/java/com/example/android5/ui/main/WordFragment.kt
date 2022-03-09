@@ -1,9 +1,11 @@
 package com.example.android5.ui.main
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -40,7 +42,19 @@ class WordFragment : Fragment() {
 //            binding.sentenceText.text = word1.sentence
 //            binding.sentenceTransText.text = word1.sentenceTrans
 //        }
-
+        binding.searchWordEdit.setOnEditorActionListener() { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEND || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                val content = binding.searchWordEdit.text.toString()
+                if (content.isNotEmpty()) {
+                    viewModel.searchWord2(content)
+                } else {
+                    viewModel.wordList.clear()
+                }
+                true
+            } else {
+                false
+            }
+        }
         binding.searchNetBtn.setOnClickListener {
             val content = binding.searchWordEdit.text.toString()
             if (content.isNotEmpty()) {
