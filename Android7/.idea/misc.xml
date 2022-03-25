@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/drawable/progress_anim_frame.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/drawable/progress_freshing_frame.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/drawable/progressbar_refresh.xml" value="0.1305" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/activity_main.xml" value="0.21829710144927536" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/activity_recycler_view_demo1.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/activity_recycler_view_demo2.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/activity_recycler_view_demo3.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/activity_recyclerview_demo1.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/demo3/activity_paging3_demo.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/demo3_layout_refresh_footer.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item.xml" value="0.21829710144927536" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item2.xml" value="0.1802536231884058" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item_recyclerview_demo1.xml" value="0.1941747572815534" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item_recyclerview_demo2.xml" value="0.26666666666666666" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item_recyclerview_demo4.xml" value="0.2222222222222222" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item_refresh_bottom_demo3.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item_refresh_footer_demo3.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/item_refresh_header_demo3.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/paging3_footer.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/paging3_item_state.xml" value="0.1" />
+        <entry key="..\:/Code/MYAppliction/Android_Homework_GXQ/Android7/app/src/main/res/layout/text.xml" value="0.2977777777777778" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

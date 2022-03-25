@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android7.demo2.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingBottom="1dp">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        android:padding="8dp"
+        android:text="置顶"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/delete2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_error"
+        android:padding="8dp"
+        android:text="删除"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</com.example.android7.demo2.SwipeMenuLayout>
