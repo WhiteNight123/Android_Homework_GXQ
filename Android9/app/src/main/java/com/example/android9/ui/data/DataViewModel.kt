@@ -21,7 +21,7 @@ class DataViewModel : ViewModel() {
         Repository.searchPlaces(query)
     }
 
-    fun showWenda(pageId:Int) {
+    fun showWenda(pageId: Int) {
         searchLiveData.value = pageId
     }
 }

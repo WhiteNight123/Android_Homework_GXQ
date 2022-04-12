@@ -4,7 +4,6 @@ import com.example.android9.logic.model.DemoData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 /**
  * ...
@@ -14,5 +13,5 @@ import retrofit2.http.Query
  */
 interface DataService {
     @GET("wenda/list/{pageId}/json")
-    fun showWenda(@Path("pageId") pageId:Int): Call<DemoData>
+    fun showWenda(@Path("pageId") pageId: Int): Call<DemoData>
 }

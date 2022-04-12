@@ -15,7 +15,7 @@ import kotlin.coroutines.suspendCoroutine
  */
 object DataNetwork {
     private val dataService = ServiceCreator.create(DataService::class.java)
-    suspend fun showWenda(pageId:Int) = dataService.showWenda(pageId).await()
+    suspend fun showWenda(pageId: Int) = dataService.showWenda(pageId).await()
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->
             enqueue(object : Callback<T> {
