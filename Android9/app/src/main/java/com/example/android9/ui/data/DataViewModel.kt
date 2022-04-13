@@ -4,8 +4,13 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import com.example.android9.logic.Repository
 import com.example.android9.logic.model.DatasBean
+import com.example.android9.logic.paging.DataPagingSource
 
 /**
  * ...
@@ -14,14 +19,17 @@ import com.example.android9.logic.model.DatasBean
  * @data 2022/4/10
  */
 class DataViewModel : ViewModel() {
-    private val searchLiveData = MutableLiveData<Int>()
-    var data = mutableStateListOf<DatasBean>()
-
-    val demoLiveData = Transformations.switchMap(searchLiveData) { query ->
-        Repository.searchPlaces(query)
-    }
-
-    fun showWenda(pageId: Int) {
-        searchLiveData.value = pageId
-    }
+    val data1 = Pager(PagingConfig(pageSize = 20)) {
+        DataPagingSource(Repository)
+    }.flow.cachedIn(viewModelScope)
+//    private val searchLiveData = MutableLiveData<Int>()
+//    var data = mutableStateListOf<DatasBean>()
+//
+//    val demoLiveData = Transformations.switchMap(searchLiveData) { query ->
+//        Repository.searchPlaces(query)
+//    }
+//
+//    fun showWenda(pageId: Int) {
+//        searchLiveData.value = pageId
+//    }
 }

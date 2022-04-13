@@ -1,8 +1,7 @@
 package com.example.android9.logic
 
-import androidx.lifecycle.liveData
-import com.example.android9.logic.network.DataNetwork
-import kotlinx.coroutines.Dispatchers
+import com.example.android9.logic.network.DataService
+import com.example.android9.logic.network.ServiceCreator
 
 /**
  * ...
@@ -11,15 +10,6 @@ import kotlinx.coroutines.Dispatchers
  * @data 2022/4/10
  */
 object Repository {
-    fun searchPlaces(pageId: Int) = liveData(Dispatchers.IO) {
-        val result = try {
-            val dataResponse = DataNetwork.showWenda(pageId)
-            val data = dataResponse.data
-            val datas = data.datas
-            Result.success(datas)
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-        emit(result)
-    }
+    suspend fun searchPlaces(pageId: Int) =
+        ServiceCreator.create(DataService::class.java).showWenda(pageId)
 }

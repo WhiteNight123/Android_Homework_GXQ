@@ -1,7 +1,6 @@
 package com.example.android9.logic.network
 
 import com.example.android9.logic.model.DemoData
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -13,5 +12,5 @@ import retrofit2.http.Path
  */
 interface DataService {
     @GET("wenda/list/{pageId}/json")
-    fun showWenda(@Path("pageId") pageId: Int): Call<DemoData>
+    suspend fun showWenda(@Path("pageId") pageId: Int): DemoData
 }

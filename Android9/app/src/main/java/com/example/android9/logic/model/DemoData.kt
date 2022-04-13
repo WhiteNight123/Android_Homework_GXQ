@@ -73,6 +73,6 @@ data class DatasBean(
     val niceDate: String,
     var author: String,
     val title: String,
-    val desc: String,
+    var desc: String,
     val link: String
 )
