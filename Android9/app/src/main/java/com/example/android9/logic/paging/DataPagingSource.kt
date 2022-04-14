@@ -21,14 +21,8 @@ class DataPagingSource(private val repository: Repository) : PagingSource<Int, D
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, DatasBean> {
         return try {
             val nextPage = params.key ?: 1
-            val data = repository.searchPlaces(nextPage).data
-            data.datas.forEach {
-                it.desc = Pattern.compile(
-                    "<[^>]+>\\s*|\t|\n" +
-                            "|\n", Pattern.CASE_INSENSITIVE
-                ).matcher(it.desc).replaceAll("") //
-                Log.e("Html", "load: ${it.desc}")
-            }
+            val data = repository.searchPlaces(nextPage).value[0].data
+
             LoadResult.Page(
                 data = data.datas,
                 prevKey = if (nextPage == 1) null else nextPage - 1,
