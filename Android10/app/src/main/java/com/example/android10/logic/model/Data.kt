@@ -11,7 +11,7 @@ package com.example.android10.logic.model
     "data":Object{...},
     "msg":"若无杀父之仇 请勿攻击本站"
  */
-data class Data(val data: DataDetail)
+data class Data(val data: DataDetail, val code: Int, val msg: String)
 
 /*{
         "uid":"167",

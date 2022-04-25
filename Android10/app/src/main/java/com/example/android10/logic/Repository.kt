@@ -1,7 +1,14 @@
 package com.example.android10.logic
 
+import android.accounts.NetworkErrorException
+import android.content.Context
+import androidx.lifecycle.MutableLiveData
+import com.example.android10.logic.model.Data
 import com.example.android10.logic.net.DataApi
 import com.example.android10.logic.net.ServiceCreator
+import com.example.android10.ui.*
+import com.example.android10.utils.checkNetConnect
+import com.example.android10.utils.showToast
 
 
 /**
@@ -11,6 +18,25 @@ import com.example.android10.logic.net.ServiceCreator
  * @data 2022/4/20
  */
 object Repository {
-    suspend fun searchHero(name: String, type: String) =
-        ServiceCreator.create(DataApi::class.java).searchHero(name, type)
+    //suspend fun searchHero(name: String, type: String) = ServiceCreator.create(DataApi::class.java).searchHero(name, type)
+    suspend fun searchHero(
+        state: MutableLiveData<MyState<Data>>,
+        context: Context,
+        name: String,
+        type: String
+    ) {
+        if (!context.checkNetConnect()) {
+            state.postValue(MyError(NetworkErrorException("网络未连接")))
+            return
+        }
+        state.postValue(MyLoading)
+        val dataResponse = ServiceCreator.create(DataApi::class.java).searchHero(name, type)
+        if (dataResponse.code == 200) {
+            state.postValue(MySuccess(dataResponse))
+        } else {
+            state.postValue(MyNoContent("没有数据"))
+            showToast(context, "参数错误")
+        }
+    }
+
 }
