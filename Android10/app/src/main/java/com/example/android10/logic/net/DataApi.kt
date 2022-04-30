@@ -1,6 +1,7 @@
 package com.example.android10.logic.net
 
-import com.example.android10.logic.model.Data
+import com.example.android10.logic.model.HeroList
+import com.example.android10.logic.model.HeroPower
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,5 +13,8 @@ import retrofit2.http.Query
  */
 interface DataApi {
     @GET("hero/select.php")
-    suspend fun searchHero(@Query("hero") hero: String, @Query("type") type: String): Data
+    suspend fun searchHero(@Query("hero") hero: String, @Query("type") type: String): HeroPower
+
+    @GET("hero/herolist.json")
+    suspend fun getHeroList(): HeroList
 }

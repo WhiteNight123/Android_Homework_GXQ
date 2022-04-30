@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat.Type.ime
+import androidx.datastore.preferences.preferencesDataStore
 
 /**
  * Context工具类
@@ -14,6 +15,10 @@ import androidx.core.view.WindowInsetsCompat.Type.ime
  * @email 1448375249@qq.com
  * @data 2022/4/23
  */
+
+//创建DataStore
+val Context.dataStore by preferencesDataStore("Cookie")
+
 /**
  * 判断网络状态
  * @return 如果wifi或数据可用返回ture

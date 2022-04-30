@@ -13,8 +13,10 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -22,8 +24,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
-import com.example.android10.logic.model.Data
-import com.example.android10.logic.model.DataDetail
+import com.example.android10.logic.model.HeroPower
+import com.example.android10.logic.model.HeroPowerDetail
 import com.example.android10.ui.MyState
 import com.example.android10.ui.page.lce.LcePage
 
@@ -34,6 +36,8 @@ import com.example.android10.ui.page.lce.LcePage
  * @data 2022/4/23
  */
 
+
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun Home(homeViewModel: HomeViewModel) {
     val searchHero = remember {
@@ -49,6 +53,7 @@ fun Home(homeViewModel: HomeViewModel) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
+            val keyboard = LocalSoftwareKeyboardController.current
             OutlinedTextField(
                 value = searchHero.value,
                 onValueChange = { searchHero.value = it },
@@ -58,16 +63,20 @@ fun Home(homeViewModel: HomeViewModel) {
                     )
                 },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-                keyboardActions = KeyboardActions(onSearch = { homeViewModel.getData(searchHero.value) })
+                keyboardActions = KeyboardActions(onSearch = {
+                    homeViewModel.getData(searchHero.value)
+                    keyboard?.hide()
+                })
             )
             Button(
                 modifier = Modifier.padding(8.dp),
-                onClick = { homeViewModel.getData(searchHero.value) }) {
+                onClick = {
+                    homeViewModel.getData(searchHero.value)
+                    keyboard?.hide()
+                }) {
                 Text(text = "搜索")
             }
         }
-//        val dataDetail = homeViewModel.heroData.observeAsState()
-//        dataDetail.value?.let { HeroDetails(data = it.data) }
         val heroDataModels by homeViewModel.heroState.observeAsState(null)
         heroDataModels?.let { HeroDetails(it) }
     }
@@ -75,7 +84,7 @@ fun Home(homeViewModel: HomeViewModel) {
 }
 
 @Composable
-fun HeroDetails(state: MyState<Data>) {
+fun HeroDetails(state: MyState<HeroPower>) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -88,7 +97,7 @@ fun HeroDetails(state: MyState<Data>) {
 }
 
 @Composable
-fun HeroDetails2(data: DataDetail) {
+fun HeroDetails2(data: HeroPowerDetail) {
     Text(
         text = "战力查询结果", style = TextStyle(
             color = Color.Blue,

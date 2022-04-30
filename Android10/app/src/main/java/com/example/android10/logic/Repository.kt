@@ -3,7 +3,8 @@ package com.example.android10.logic
 import android.accounts.NetworkErrorException
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import com.example.android10.logic.model.Data
+import com.example.android10.logic.model.HeroList
+import com.example.android10.logic.model.HeroPower
 import com.example.android10.logic.net.DataApi
 import com.example.android10.logic.net.ServiceCreator
 import com.example.android10.ui.*
@@ -18,9 +19,10 @@ import com.example.android10.utils.showToast
  * @data 2022/4/20
  */
 object Repository {
+    val retrofit=ServiceCreator.create(DataApi::class.java)
     //suspend fun searchHero(name: String, type: String) = ServiceCreator.create(DataApi::class.java).searchHero(name, type)
     suspend fun searchHero(
-        state: MutableLiveData<MyState<Data>>,
+        state: MutableLiveData<MyState<HeroPower>>,
         context: Context,
         name: String,
         type: String
@@ -30,7 +32,7 @@ object Repository {
             return
         }
         state.postValue(MyLoading)
-        val dataResponse = ServiceCreator.create(DataApi::class.java).searchHero(name, type)
+        val dataResponse = retrofit.searchHero(name, type)
         if (dataResponse.code == 200) {
             state.postValue(MySuccess(dataResponse))
         } else {
@@ -38,5 +40,7 @@ object Repository {
             showToast(context, "参数错误")
         }
     }
+
+    suspend fun getHeroList() = retrofit.getHeroList()
 
 }
